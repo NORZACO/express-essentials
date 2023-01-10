@@ -1,0 +1,30 @@
+{
+  "name": "express-essentials",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js",
+    "restart": "nodemon tester/app.js",
+    "dev": "nodemon --trace-warnings --experimental-json-modules --exec babel-node mainjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NORZACO/express-essentials.git"
+  },
+  "keywords": [],
+  "author": "Mwamuzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NORZACO/express-essentials/issues"
+  },
+  "homepage": "https://github.com/NORZACO/express-essentials#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "express": "^4.18.2"
+  }
+}
