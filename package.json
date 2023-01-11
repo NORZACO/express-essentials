@@ -6,9 +6,16 @@
   "scripts": {
     "start": "nodemon main.js",
     "restart": "nodemon tester/app.js",
-    "test": "nodemon routers/hello.js",
-    "dev": "nodemon --trace-warnings --experimental-json-modules --exec babel-node mainjs",
-    "fix": "npm audit fix --force"
+    "develop": "nodemon --trace-warnings --experimental-json-modules --exec babel-node mainjs",
+    "fix": "npm audit fix --force",
+
+
+    "build": "npm-run-all clean transpile",
+    "server": "node ./dist-server/bin/www",
+    "dev": "NODE_ENV=development npm-run-all build server",
+    "prod": "NODE_ENV=production npm-run-all build server",
+    "transpile": "babel ./server --out-dir dist-server",
+    "clean": "rimraf dist-server"
   },
   "repository": {
     "type": "git",
