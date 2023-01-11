@@ -1,15 +1,25 @@
 const express = require('express');
 const app = express()
 // const data = require('../data/mocking.json');
-const { listen } = require('../utils/errorhandler');
+
 
 
 
 // GET ALL
-app.route('/testing')
-    .get((request, response) => {
+app.route('/testing').get((request, response) => {
         response.send('Get List of all users');
+    }).post(
+        (request, response) => {
+            response.send('Get List of all users');
+        }
+    )
+
+// GET ONE
+app.route('/testing/:id')
+    .get((request, response) => {
+        response.send('Get one user');
     })
+
 
 
 

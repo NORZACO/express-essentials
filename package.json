@@ -4,10 +4,11 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon main.js",
     "restart": "nodemon tester/app.js",
-    "dev": "nodemon --trace-warnings --experimental-json-modules --exec babel-node mainjs"
+    "test": "nodemon routers/hello.js",
+    "dev": "nodemon --trace-warnings --experimental-json-modules --exec babel-node mainjs",
+    "fix": "npm audit fix --force"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,12 @@
     "@babel/core": "^7.20.12",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
-    "express": "^4.18.2"
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.3.2"
+  },
+  "dependencies": {
+    "jade": "^0.31.2"
   }
 }

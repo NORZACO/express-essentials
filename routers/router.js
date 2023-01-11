@@ -12,8 +12,7 @@ router.get('/', (request, response) => {
 
 
 // GET ALL
-router.get(
-    '/next',
+router.get('/next',
     (request, response, next) => {
         console.log('Response will be send by the next function');
         next();
@@ -32,9 +31,14 @@ router.get('/users', (request, response) => {
 
 // GET class with ID
 router.get('/users/:id', (request, response) => {
-    const studentID = Number(request.params.id)
+    const studentID = Number(request.params.id);
     const student = data.filter((student) => student.id === studentID);
-    response.json(student);
+    console.log(student);
+    if (student) {
+        response.json(student);
+    } else {
+        response.status(404).send('Student not found');
+    }
 });
 
 
@@ -56,44 +60,145 @@ router.delete('/delete', (request, response) => {
 });
 
 // DOWNLOAD
-router.get('/download', (request, response) => {
-    response.download('public/images/1.jpg');
-});
+router.get('/download', (request, response, printMessage) => {
+    console.log('Download image.....');
+    printMessage();
+}
+    , (request, response) => {
+        response.download('public/images/2.jpg');
+    });
 
 
 // REDIRECT
-router.get('/redirect', (request, response) => {
+router.get('/redirect', (request, response, printMessage) => {
     response.redirect('http://127.0.0.1:3000/users/10');
 });
 
 
 // rout and get?|
 
+router.all('/secret', (request, response, next) => {
+    console.log('Globall Accessing the secret section ...')
+    next() // pass control to the next handler
+
+})
+
+
+// An array of callback functions can handle a route. For example:
+const cb0 = function (request, response, next) {
+    console.log('CB0')
+    next()
+}
+
+const cb1 = function (request, response, next) {
+    console.log('CB1')
+    next()
+}
+
+const cb2 = function (request, response) {
+    res.send('Hello from C!')
+}
+
+router.get('/userarray/teacher', [cb0, cb1, cb2])
 
 
 
 
+// student id request parems
+router.get('/class/:id', (request, response) => {
+    console.log(request.params)
+    response.send(`Details of user class id: ${request.params.id}`.toUpperCase())
+})
 
 
 
+// CRUD http?
+router.get('/crud/:id', (request, response) => {
+    response.send(`Retrieve data of user crud id: ${request.params.id}`.toUpperCase());
+});
+
+
+// CRUD http?
+router.post('/crud/:id', (request, response) => {
+    response.send(`Create of user crud id: ${request.params.id}`.toUpperCase());
+});
+
+
+// CRUD http?
+router.put('/crud/:id', (request, response) => {
+    // console.log(`Details of user crud id: ${request.params}`.toUpperCase());
+    response.send(`Update of user crud id: ${request.params.id}`.toUpperCase());
+});
+
+
+// CRUD http?
+router.delete('/crud/:id', (request, response) => {
+    response.send(`Delete of user crud id: ${request.params.id}`.toUpperCase());
+});
 
 
 
+// using express json and express.urlncoded
+/*
+Headers: Content-Type
+Value: application/json
+Body:  {"'item" : "Salami from Sweden"}
+*/
+router.post('/items1', (request, response) => {
+    let user = request.body;
+    console.log(user);
+    response.send(user);
+});
+
+/*
+Headers:
+Key:  Content-Type
+Value: application/x-www-form-urlencoded
+x-www-form-urlencoded:  {"'item" : "Salami from Sweden"}
+*/
+router.post('/items2', (request, response) => {
+    let user = request.body;
+    console.log(user);
+    response.send(user);
+});
 
 
 
+router
+    .route('/data')
+    .get(function (request, response) {
+        // response.send('GET request to the homepage');
+        throw new Error();
+    }
+    )
+    .post(function (request, response) {
+        response.send('POST request to the homepage');
+    }
+    )
+    .put(function (request, response) {
+        response.send('PUT request to the homepage');
+    }
+    )
+    .delete(function (request, response) {
+        response.send('DELETE request to the homepage');
+    }
+    );
+
+
+// // error handler
+
+
+// {"userId": "34", "bookId": "8989"}
+router.get('/:userId/books/:bookId', (req, res) => {
+    res.send(req.params)
+  })
 
 
 
-
-
-
-
-
-
-
-
-
+  const myLogger = function (req, res, next) {
+    console.log('LOGGED')
+    next()
+  }
 
 
 
@@ -103,5 +208,6 @@ router.get('/redirect', (request, response) => {
 
 
 module.exports = {
-    'usersRouter': router
+    'usersRouter': router,
+    'myLogger': myLogger
 }
