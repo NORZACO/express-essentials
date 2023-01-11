@@ -1,0 +1,500 @@
+   24  la
+   25  ls cd ..
+   26  exit
+   27  ssh mwamuzishada@165.22.16.121
+   28  ssh mwamuzishada@134.209.16.19
+   29  clear
+   30  ssh mwamuzishada@134.209.16.19
+   31  ssh mwamuzishada@134.209.16.19
+   32  ls
+   33  cd venv/
+   34  ls
+   35  cd ..
+   36  cd ..
+   37  ls
+   38  ls
+   39  /c/PROJECTS
+   40  cd /c/PROJECTS
+   41  ls
+   42  ssh root@134.209.16.19
+   43  ls
+   44  cd ..
+   45  ls
+   46  cd ..
+   47  ls
+   48  cd PROJECTS/
+   49  LS
+   50  pwd
+   51  ls
+   52  scp r project-portfolio/ mwamuzishada@134.209.16.19:/home/mwamuzishada
+   53  ls
+   54  scp -r project-portfolio/ mwamuzishada@134.209.16.19:/home/mwamuzishada
+   55  pwd
+   56  ls
+   57  ls
+   58  scp -r project-portfolio/ mwamuzishada@134.209.16.19:/home/mwamuzishada
+   59  ls
+   60  ls
+   61  cd Desktop/
+   62  ls
+   63  cd PROJECT/
+   64  LS
+   65  cd djangodevop/
+   66  ls
+   67  cd ..
+   68  ls
+   69  ls
+   70  cd djangoenv/
+   71  ls
+   72  source Scripts/activate
+   73  clear
+   74  ls
+   75  ls
+   76  cd ..
+   77  ls
+   78  cd djangoenv/
+   79  ls
+   80  cd portifolio/
+   81  python manage.py runserver
+   82  python manage.py runserver
+   83  python manage.py runserver
+   84  python manage.py runserver
+   85  G:\docs-01\django-tester
+   86  G:/docs-01/django-tester
+   87  ls
+   88  cd ..
+   89  ls
+   90  ls
+   91  v
+   92  clear
+   93  ls
+   94  cd ..
+   95  ls
+   96  cd ..
+   97  ls
+   98  ls
+   99  ls
+  100  cd ..
+  101  cd ..
+  102  ls
+  103  ls
+  104  source venvtest/bin/activate
+  105  clear
+  106  ls
+  107  cd ..
+  108  ls
+  109  cd django-tester/
+  110  ¨ls
+  111  ls
+  112  cd project-portfolio/
+  113  ls
+  114  python manage.py runserver
+  115  ls
+  116  ls
+  117  pip install psycopg2-binary
+  118  pip install psycopg2-binary
+  119  clear
+  120  pip install pip install psycopg2-binary
+  121  pip install psycopg2-binary
+  122  python.exe -m pip install --upgrade pip
+  123  ls
+  124  source env_site/bin/activate
+  125  ls
+  126  cd env_site/
+  127  ls
+  128  python manage.py runserver
+  129  pwd
+  130  ls
+  131  source venv/
+  132  ls
+  133  cd venv/
+  134  ls
+  135  cd Scripts/activate
+  136  source Scripts/activate
+  137  ls
+  138  cd ..
+  139  ls
+  140  cd project-portfolio/
+  141  python manage.py runserver
+  142  python manage.py runserver
+  143  pip install pyusb
+  144  pip install python
+  145  pip install python
+  146  ls
+  147  pip install virtualenv
+  148  pip install virtualenv
+  149  C:\Users\Admin\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\python.exe -m pip install --upgrade pip
+  150  python.exe -m pip install --upgrade pip
+  151  virtualenv venv
+  152  ¨ls
+  153  ls
+  154  source venv/Scripts/activate
+  155  clear
+  156  ls
+  157  cd project-portfolio/
+  158  ls
+  159  python manage.py runserver
+  160   pip install -r requirements.txt
+  161  'G:\PROJECT01\venv\Scripts\python.exe -m pip install --upgrade pip
+  162  exit
+  163   pip install -r requirements.txt
+  164  '
+  165  G:\PROJECT01\venv\Scripts\python.exe -m pip install --upgrade pip
+  166  ls
+  167  python manage.py runserver
+  168  python manage.py runserver 127.0.0.1:8000
+  169  python manage.py runserver 127.0.0.1
+  170  python manage.py runserver
+  171  cls
+  172  clear
+  173  python manage.py runserver
+  174  pwd
+  175  ls
+  176  source venv/bin/activate
+  177  cd project-portfolio/
+  178  clear
+  179  ls
+  180  python manage.py runserver 10.0.0.24:8080
+  181  clear
+  182  ls
+  183  pip install -r requirements.txt 
+  184  python.exe -m pip install --upgrade pip
+  185  C:\Users\Admin\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\python.exe -m pip install --upgrade pip
+  186  clear
+  187  pip freeze
+  188  exit
+  189  ls
+  190  cd ..
+  191  ls
+  192  cd ..
+  193  ls
+  194  cd ..
+  195  ls
+  196  cd g
+  197  ls
+  198  cd portfolioweb/
+  199  ls
+  200  source venvwindow/Scripts/activate
+  201  clear
+  202  ls
+  203  cd project-portfolio/
+  204  python manage.py runserver 10.0.0.29:8000
+  205  python manage.py runserver 10.0.0.29:8000
+  206  C:/Users/Admin/anaconda3/Scripts/activate
+  207  conda activate 
+  208  clear
+  209  ls
+  210  source venv/bin/activate
+  211  clear
+  212  pip install virtualenv
+  213  virtualenv venvtwo
+  214  ls
+  215  source venvtwo/bin/activate
+  216  ls
+  217  clear
+  218  exit
+  219  ls
+  220  cd ..
+  221  ls
+  222  cd ..
+  223  ls
+  224  cd ..
+  225  ls
+  226  cd ..
+  227  ls
+  228  cd g
+  229  ls
+  230  cd PROJECTZ/project-portfolio
+  231  CLEAR
+  232  ls
+  233  source venv/bin/activate
+  234  clear
+  235  ls
+  236  pip install -r requirements
+  237  python.exe -m pip install --upgrade pip
+  238  clear
+  239  pip install -r requirements
+  240  C:\Users\Admin\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\python.exe -m pip install --upgrade pip
+  241  ls
+  242  exit
+  243  ls
+  244  cd g
+  245  cd ..
+  246  cd ..
+  247  cd g
+  248  cd ..
+  249  cd g
+  250  cd PROJECTZ
+  251  clear
+  252  cd project-portfolio
+  253  source venvtwo/Scripts/activate
+  254  clear
+  255  python manage.py makemigrations
+  256  python manage.py makemigrations
+  257  python manage.py makemigrations betaleapp
+  258  python manage.py migrate
+  259  python manage.py createsuperuser
+  260  psql
+  261  SELECT * FROM public.auth_user
+  262  ls
+  263  cd nickfitness/
+  264  python manage.py runserver 10.0.0.29:8000
+  265  cd ..
+  266  ls
+  267  source venv/bin/activate
+  268  clear
+  269  python manage.py runserver 10.0.0.29:8000
+  270  ls
+  271  cd nickfitness/
+  272  python manage.py runserver 10.0.0.29:8000
+  273  clear
+  274  ls
+  275  pip install stripe
+  276  python.exe -m pip install --upgrade pip
+  277  pip upgrade pip
+  278  python -m pip install --upgrade pip
+  279  python manage.py runserver 10.0.0.29:8000
+  280  python manage.py runserver 10.0.0.29:8000
+  281  cd ..
+  282  ls
+  283  SELECT * FROM public.auth_user
+  284  virtualenv venv/
+  285  ls
+  286  cd venv/
+  287  ls
+  288  cd ..
+  289  cd nickfitness/
+  290  ls
+  291  python manage.py runserver 10.0.0.29:8000
+  292  python manage.py runserver 10.0.0.29:8000
+  293  pip install psycopg2-binary
+  294  python manage.py runserver 10.0.0.29:8000
+  295  pip install psycopg2
+  296  python -m pip install --upgrade pip
+  297  python manage.py runserver 10.0.0.29:8000
+  298  pip freeze
+  299  exit
+  300  source g:/nettside/01_01_begin/venv/Scripts/activate
+  301  cd nickfitness/
+  302  python manage.py runserver 10.0.0.29:8000
+  303  exit
+  304  env
+  305  ls -la
+  306  open -a "Visual Studio Code" .ssh 
+  307  open -a "Visual Studio Code" .ssh /
+  308  open -a "Visual Studio Code" .ssh/
+  309  nano .ssh
+  310  en
+  311  env
+  312  pip install virtualenvwrapper-win
+  313  which python
+  314  which python3
+  315  workon
+  316  which python3
+  317   mkvirtualenv --python=/c/Users/Admin/AppData/Local/Microsoft/WindowsApps/python3 test
+  318  cmd
+  319  ssh mwamuzis1914@159.65.52.116
+  320  ls
+  321  source venvs/Scripts/activate
+  322  clear
+  323  ls
+  324  cd msviews/
+  325  ls
+  326  cd solution/
+  327  ls
+  328  python manage.py runserver 10.0.0.29:8000
+  329  pip install django-crispy-forms
+  330  python manage.py runserver 10.0.0.29:8000
+  331  exit
+  332  workfolders
+  333  exit
+  334  C:/Users/Admin/anaconda3/Scripts/activate
+  335  conda activate base
+  336  ls
+  337  python manage.py runserver 127.0.0.1:8000
+  338  pip install virtualenv
+  339  C:\Python310\python.exe -m pip install --upgrade pip
+  340  exit
+  341  pwd
+  342  ls
+  343  clear
+  344  history > myhistory.txt
+  345  ls
+  346  pwd
+  347  git status
+  348  git add .
+  349  git commit -m Eend of dom html js css"
+  350  git commit -m "end of dom html js css"
+  351  git pull
+  352  git push
+  353  exit
+  354  npm i dotenv
+  355  NPM RUN
+  356  npm run
+  357  npm run mwamuzi
+  358  npm run mwamuzi
+  359  nodemon 
+  360  npm start
+  361  ls
+  362  ls ..
+  363  ls ../
+  364  cd ./
+  365  cd ../../
+  366  ls ../
+  367  ls
+  368  exit
+  369  npm install --save sweetalert2
+  370  npm install sweetalert2 --save
+  371  git add .
+  372  git commit -m "front end script " > testme.txt
+  373  git commit -m "front end script "
+  374  git pull
+  375  git push
+  376  exit
+  377  ezit
+  378  exit
+  379  git status
+  380  source venv/Scripts/activate
+  381  python manage.py runserver 127.0.0.1:8001
+  382  gh
+  383  git remote -vv
+  384  git remote -v
+  385  ls
+  386  deactivate 
+  387  clear
+  388  ls
+  389  cd ..
+  390  ld
+  391  ld
+  392  ls
+  393  git remote -v
+  394  history 
+  395  mkdir GhHub
+  396  cd GhHub/
+  397  cd ..
+  398  cd ..
+  399  mkdir GhHub
+  400  cd GhHub/
+  401  echo "# schoolApi-0A" >> README.md
+  402  git init
+  403  git add README.md
+  404  git commit -m "first commit"
+  405  git branch -M main
+  406  git remote add origin git@github.com:NORZACO/schoolApi-0A.git
+  407  git push -u origin main
+  408  git log
+  409  git restore 
+  410  git restore .
+  411  git log
+  412  git remote -v
+  413  git fetch
+  414  clear
+  415  exit
+  416  git remote -v
+  417  ls
+  418  cd Documents/GhHub/
+  419  git remote -v
+  420  cd ..
+  421  rm GhHub/
+  422  rm -r GhHub/
+  423  rm -R GhHub
+  424  gh
+  425  clear
+  426  history 
+  427  clear
+  428  gh repo create schoolApi-0A
+  429  gh repo create schoolApi-0A --public
+  430  gh auth token
+  431  gh auth token
+  432  pwd
+  433  mkdir pyver
+  434  python3
+  435  where python3
+  436  code .
+  437  cd Documents/
+  438  cd Documents/AzureDevOps
+  439  cd Downloads/
+  440  ls
+  441  ls
+  442  clear
+  443  ls
+  444  cd ..
+  445  cd AzureDevOps/
+  446  ls
+  447  virtualenv venv
+  448  pip install virtualenv
+  449  git local file:///C:/Users/Admin/OneDrive/GitHub/git/myproject
+  450  git clone file:///C:/Users/Admin/OneDrive/GitHub/git/myproject
+  451  echo 'test me' > app.txt
+  452  cd myproject/
+  453  ls
+  454  echo 'test me' > app.txt
+  455  git add .
+  456  git commit - 'test'
+  457  git commit -m 'test'
+  458  git push
+  459  ls
+  460  git log
+  461  ls
+  462  cd ..
+  463  ls
+  464  ls
+  465  pwd
+  466  mr -R myproject/
+  467  mr -R myproject
+  468  rm -R myproject/
+  469  git status
+  470  git status
+  471  ls
+  472  ls
+  473  mr -r myproject
+  474  rm -r myproject
+  475  rm -r myproject 
+  476  ls
+  477  ls
+  478  ls -la
+  479  ls ./
+  480  pwd
+  481  cd OneDrive\GitHub>
+  482  cd OneDrive/GitHub>
+  483  cd OneDrive/GitHub>
+  484  cd OneDrive
+  485  cd GitHub/
+  486  ls
+  487   rm -R Mwamuzi_Shadrick_sp1/
+  488  ls
+  489  clear
+  490  ls
+  491  mkdir git
+  492  cd git 
+  493  mkdir myproject
+  494  cd myproject
+  495  git init
+  496  git config --bool core.bare true
+  497  ls
+  498  ls -la
+  499  clear
+  500  npm install cookie-parser --save-dev
+  501  npm audit fix --force
+  502  npm audit fix --force
+  503  npm audit fix --force
+  504  npm audit fix --force
+  505  npm audit fix --force
+  506  npm install http-errors --save-dev
+  507  npm audit fix --force
+  508  npm audit fix --force
+  509  npm i morgan --save-dev
+  510  npm audit fix --force
+  511  npm audit fix --force
+  512  npm audit fix --force
+  513  npm install --save express jade
+  514  npm audit fix --force
+  515  npm audit fix --force
+  516  git add .
+  517  git commit -m "next error handler Log middlewares"
+  518  git pull
+  519  git push
+  520  DEBUG=express:* nodemon --experimental-json-modules main.js
+  521  DEBUG=express:* node --experimental-json-modules main.js
+  522  clear
+  523  history > all_cmd.txt
