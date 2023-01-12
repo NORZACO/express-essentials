@@ -14,9 +14,11 @@ const { errorRouter, /*creatingError, creatingError2 */} = require('./utils/erro
 
 
 var app = express();
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
 
 // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, './views'));
 // app.set('view engine', 'jade'); // npm install --save express jade
 
 app.use(logger('dev'));
@@ -99,7 +101,7 @@ app.use('/itemsform', usersRouter)
 
 
 // app.use('/data', usersRouter)
-
+app.use('/contact', usersRouter)
 
 
 
@@ -107,11 +109,25 @@ app.use('/itemsform', usersRouter)
 app.use(myLogger)
 
 
-
-
 app.use('/', fileRouter)
+
+
 app.use('/about', fileRouter)
 
+app.use('/contact', fileRouter)
+
+
+app.use('/welcome', fileRouter)
+
+
+app.use('/school', fileRouter)
+
+
+
+
+
+
+// app.use('/greeting', pageRouter)
 
 
 
@@ -121,8 +137,7 @@ app.use('/about', fileRouter)
 
 
 
-
-app.listen(3000, () => {
+app.listen(8000, () => {
       console.log('Server started on port 3000 \n');
       // cancel?
     // console.log('TISHIRT IMAGE: http://localhost:3000/static/images/tshirt1.jpg');

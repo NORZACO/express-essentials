@@ -11,6 +11,14 @@ router.get('/', function (req, res, next) {
   res.sendFile(path.join(__dirname, '..', 'index.html'))
 });
 
+
+
+/* GET home page. */
+router.get('/contact', function (req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
 // greeting page
 // router.get('/greeting', function(request, response, next){
 //     console.log('hellp world');

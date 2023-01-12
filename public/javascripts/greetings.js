@@ -1,5 +1,5 @@
-alert("hello world")
-prompt("HELLO MR", "MWAMUZI")
+// alert("hello world")
+// prompt("HELLO MR", "MWAMUZI")
 
 
 const firstAlert = () => {
@@ -9,3 +9,4 @@ const firstAlert = () => {
     })
 }
 firstAlert()
+

@@ -214,10 +214,14 @@ const myLogger = function (req, res, next) {
 
 
 
+/* GET contact page. */
+// router.get('/contact', function(req, res, next) {
+//     res.render('main', { title: 'Express Learning ' });
+//   });
 
-
-
-
+router.get('/contact', function(req, res, next) {
+    res.render('pages/contact', { title: 'MWAMUZISCODE' });
+});
 
 
 
