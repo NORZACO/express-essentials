@@ -5,9 +5,24 @@ const data = require('../data/mocking.json');
 
 
 // GET ALL
-router.get('/', (request, response) => {
+router.get('/homepage', (request, response) => {
     response.send('Get List of all users');
 })
+
+// GET ALL
+router.get('/greeting/:name', (request, response, nextHandler) => {
+    console.log('Waiting for the handler function');
+    nextHandler()
+}, (request, response) => {
+    response.send(`hello ${request.params.name} !`)
+})
+
+// router.get('/:name', (req, res, next) => {
+//     console.log('Handling request...');
+//     next();
+// }, (req, res) => {
+//     res.send(`Hello, ${req.params.name}!`);
+// });
 
 
 
@@ -96,7 +111,7 @@ const cb1 = function (request, response, next) {
 }
 
 const cb2 = function (request, response) {
-    res.send('Hello from C!')
+    response.send('Hello from C!')
 }
 
 router.get('/userarray/teacher', [cb0, cb1, cb2])
@@ -185,20 +200,19 @@ router
     );
 
 
-// // error handler
-
-
 // {"userId": "34", "bookId": "8989"}
 router.get('/:userId/books/:bookId', (req, res) => {
     res.send(req.params)
-  })
+})
 
 
 
-  const myLogger = function (req, res, next) {
+const myLogger = function (req, res, next) {
     console.log('LOGGED')
     next()
-  }
+}
+
+
 
 
 

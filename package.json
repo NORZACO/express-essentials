@@ -8,8 +8,6 @@
     "restart": "nodemon tester/app.js",
     "develop": "nodemon --trace-warnings --experimental-json-modules --exec babel-node mainjs",
     "fix": "npm audit fix --force",
-
-
     "build": "npm-run-all clean transpile",
     "server": "node ./dist-server/bin/www",
     "dev": "NODE_ENV=development npm-run-all build server",
@@ -34,11 +32,16 @@
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.4",
     "express": "^4.18.2",
     "http-errors": "^2.0.0",
-    "morgan": "^1.3.2"
+    "morgan": "^1.3.2",
+    "pg": "^8.8.0"
   },
   "dependencies": {
-    "jade": "^0.31.2"
+    "jade": "^0.29.0"
   }
 }

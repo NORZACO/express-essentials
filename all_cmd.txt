@@ -498,3 +498,15 @@
   521  DEBUG=express:* node --experimental-json-modules main.js
   522  clear
   523  history > all_cmd.txt
+
+
+npm install ejs --save-dev
+
+npx eslint --init
+find problem
+common js
+none
+node
+airbid
+json
+
