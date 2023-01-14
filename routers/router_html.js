@@ -32,7 +32,21 @@ router.get('/contact', function (req, res, next) {
 /* GET welcome page. */
 router.get('/welcome', function (request, response, next) {
   let filePath = 'pages/index'
-  let context = { pageTitle: 'Welcome to Express' }
+  let context = {
+    pageTitle: 'Welcome to Express',
+    newUser: request.params.newUser
+  }
+  response.render(filePath, context);
+});
+
+
+/* GET welcome page. */
+router.get('/welcome/:newUser', function (request, response, next) {
+  let filePath = 'pages/index'
+  let context = {
+    pageTitle: 'Welcome to Express',
+    newUser: request.params.newUser
+  }
   response.render(filePath, context);
 });
 
@@ -41,16 +55,16 @@ router.get('/welcome', function (request, response, next) {
 /* GET contact page. */
 router.get('/school', function (req, res, next) {
   const template_name = 'pages/noroff_index'
-  const context = {pageTitle: 'Noroff School of Technology and Digital Media',}
+  const context = { pageTitle: 'Noroff School of Technology and Digital Media', }
   res.render(template_name, context)
 });
 
 
 
-  /* GET contact page. */
+/* GET contact page. */
 router.get('/layout', function (req, res, next) {
   const template_name = 'partials/mainpage'
-  const context = {pageTitle: 'Noroff School of Technology and Digital Media',}
+  const context = { pageTitle: 'Noroff School of Technology and Digital Media', }
   res.render(template_name, context)
 });
 

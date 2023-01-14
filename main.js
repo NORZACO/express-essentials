@@ -7,9 +7,18 @@ var logger = require('morgan');  // npm i morgan --save-dev
 
 const { usersRouter, myLogger } = require('./routers/router');
 // const { pageRouter } = require('./routers/router_index')
-const { fileRouter} = require('./routers/router_html')
-const { errorRouter, /*creatingError, creatingError2 */} = require('./utils/errorhandler')
+const { fileRouter } = require('./routers/router_html')
+const { errorRouter, /*creatingError, creatingError2 */ } = require('./utils/errorhandler')
 // 'creatingError': creatingError, creatingError2: creatingError2
+
+// require routers\cockies.js
+const { 
+  localVariableRouter, 
+  CockiesSession, 
+  responseVariable,
+  setAppLocalVariable
+} = require('./routers/cockies')
+
 
 
 
@@ -122,24 +131,31 @@ app.use('/welcome', fileRouter)
 
 app.use('/school', fileRouter)
 
+app.use('/:newUser', usersRouter)
+
+// app.use(CockiesSession)
 
 
+var time = new Date();
+var hr = time.getHours();
+var min = time.getMinutes();
+var sec = time.getSeconds();
+app.locals.siteVariable = `${hr} : ${min} : ${sec}`
 
 
+// app.use(responseVariable)
 
-// app.use('/greeting', pageRouter)
-
-
-
-
+// app.locals.someVariable = 'MWAMUZISCODE';
+setAppLocalVariable(app);
 
 
+// app.use(localVariableRouter)
 
 
 
 app.listen(8000, () => {
-      console.log('Server started on port 3000 \n');
-      // cancel?
-    // console.log('TISHIRT IMAGE: http://localhost:3000/static/images/tshirt1.jpg');
+  console.log('Server started on port 3000 \n');
+  // cancel?
+  // console.log('TISHIRT IMAGE: http://localhost:3000/static/images/tshirt1.jpg');
 
 });

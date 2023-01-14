@@ -1,0 +1,25 @@
+
+<br><hr>
+<table class="table border border-primary table-bordered">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Age</th>
+            <th> Email </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(function(user, index){ %>
+            <tr>
+               <!-- <td scope="row">1++</td> -->
+              <td><%- user.name  %></td>
+              <td><%- user.age %></td>
+              <td><%- user.email %></td>
+              <td> <%= ++counter %> </td>
+            </tr>
+          <% }); %>
+    </tbody>
+</table>
+
+
+  

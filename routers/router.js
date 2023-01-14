@@ -17,6 +17,8 @@ router.get('/greeting/:name', (request, response, nextHandler) => {
     response.send(`hello ${request.params.name} !`)
 })
 
+
+
 // router.get('/:name', (req, res, next) => {
 //     console.log('Handling request...');
 //     next();
@@ -224,6 +226,9 @@ router.get('/contact', function(req, res, next) {
 });
 
 
+// router.get('/:newUser', function(req, res, next) {
+//     res.render('index', { newUser: req.params.newUser });
+//   });
 
 module.exports = {
     'usersRouter': router,
