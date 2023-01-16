@@ -9,6 +9,9 @@
   <meta name="generator" content="Hugo 0.108.0">
   <title> Express Websites </title>
 
+  <!-- <script src="./public/javascripts/jquery-3.6.3.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -162,11 +165,26 @@
       </p>
 
       <ul id="messages"></ul>
-
       <form id="form" action="">
-        <input id="input" autocomplete="off" placeholder="write something" />
-        <button>Send</button>
+        <input id="input" autocomplete="off" /><button>Send</button>
       </form>
+
+      <!-- <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+      </div> -->
+      <!-- <div class="row" style="color:rgb(255, 255, 255)">
+        <ul style="color: #fff;" id="messages"></ul>
+      </div>
+      <form action="" id="form">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Recipient's username" id="inputInfo" autocomplete="off"
+            aria-label="Recipient's username" aria-describedby="button-addon2">
+           <button class="btn " type="submit" id="button-addon2">Button</button> 
+          <button type="submit" class="btn btn-primary"> SEND </button>
+
+        </div>
+      </form> -->
 
 
 
@@ -178,6 +196,7 @@
           href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
     </footer>
   </div>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script> -->
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -185,17 +204,77 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
     crossorigin="anonymous"></script>
-  <!-- <script src="./public/javascripts/greetings.js"></script> -->
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
+    <!-- <%- include('../public/javascripts/greetings.js') %>  -->
 
-    var socket = io();
-    /* var socket  = io();
-    socket.on('server message', (data) => {
-      console.log(data);
-    })
-    */
-  </script>
+    <script src="../javascripts/greetings.js"></script>
+
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io();
+
+   socket.on('server message', (data) => {
+     console.log(data);
+   })
+
+   
+  socket.on('connect', () => {
+    console.log('Connected to server');
+  });
+
+  socket.on('disconnect', () => {
+    console.log('Disconnected from server');
+  });
+
+
+  // Get the form and input elements
+  var form = document.getElementById('form');
+  var input = document.getElementById('input');
+
+  // Handle form submission
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (input.value) {
+      // Send the message
+      socket.emit('chat message', input.value);
+      input.value = '';
+    }
+  });
+</script>¨
+
+<!--
+<script>
+  // initialize socket connection
+  var socket = io();
+
+  // log server message data to the console
+  socket.on('server message', (data) => {
+    console.log(data);
+  });
+
+  // get form and input elements
+  var form = document.getElementById('form');
+  var input = document.getElementById('input');
+
+  // handle form submission
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (input.value) {
+      // emit chat message event with input value as data
+      socket.emit('chat message', input.value);
+      // clear input field
+      input.value = '';
+    }
+  });
+
+  // handle chat message event and append to message list
+  socket.on('chat message', function(msg) {
+    var item = document.createElement('li');
+    item.textContent = msg;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+</script> 
+-->
 </body>
 
 </html>

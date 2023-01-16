@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon main.js",
     "restart": "nodemon tester/app.js",
+    "test": "nodemon router_test.js",
     "develop": "nodemon --trace-warnings --experimental-json-modules --exec babel-node mainjs",
     "fix": "npm audit fix --force",
     "build": "npm-run-all clean transpile",
