@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    
+
+    <div class="row" style="color:rgb(255, 255, 255)">
+        <ul style="color: rgb(128, 26, 26);" id="messages"></ul>
+    </div>
+    <form action="" id="form">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Recipient's username" id="input"
+                autocomplete="off" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button type="submit" class="btn btn-primary"> SEND </button>
+
+        </div>
+    </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+
+<script>
+    // This code is for a chat application using socket.io
+
+// Declare the room variable as 'room1'
+const room = 'room2';
+
+// Connect to the '/admin' namespace on the server
+var socket = io('/admin');
+
+// Listen for a 'server message' event from the server and log the data received
+socket.on('server message', (data) => {
+console.log(data);
+});
+
+// Get the form and input elements from the HTML
+var form = document.getElementById('form');
+var input = document.getElementById('input');
+
+// Add a submit event listener to the form
+form.addEventListener('submit', function(e) {
+// Prevent the form from submitting
+e.preventDefault();
+// Check if there is a value in the input
+if (input.value) {
+// Create a variable 'msg' with the value of the input
+var msg = input.value;
+// Emit a 'chat message' event to the server with the message and room
+socket.emit('chat message', { msg, room });
+// Clear the input
+input.value = '';
+}
+});
+
+// Listen for a 'chat message' event from the server
+socket.on('chat message', function(msg) {
+// Create a new list item element
+var item = document.createElement('li');
+// Set the text content of the element to the message received
+item.textContent = msg;
+// Append the element to the messages list
+messages.appendChild(item);
+// Scroll to the bottom of the page
+window.scrollTo(0, document.body.scrollHeight);
+});
+
+// When the socket connects, emit a 'join' event to the server with the room
+socket.on('connect', () => {
+socket.emit('join', { room: room });
+});
+</script>
+
+
+</body>
+</html>
