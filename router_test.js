@@ -24,21 +24,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', (req, res) => {
-  let template_name = 'index_test'
+  let template_name = 'public/htmls/index_test.html'
   //render template_name?
   // res.render(template_name, { title: 'Express' });
-
-  res.sendFile(path.join(__dirname ,'.',  'public/htmls/index_test.html'));
+  res.sendFile(path.join(__dirname, '.', template_name));
 });
 
-// console.log(path.join(__dirname))
-// InputOutput.on('connection', (socket) => {
-//   console.log('a user connected');
-//   console.log(`userID ------ ${socket.id} -----`);
-// });
+
+console.log(path.join(__dirname))
+InputOutput.on('connection', (socket) => {
+  console.log('a user connected');
+  console.log(`user id ${socket.id} `);
+});
 
 InputOutput.on('connection', (socket) => {
-  console.log(`a user with id --- ${socket.id} --- connected`);
+  console.log(`user id ${socket.id} `);
   socket.on('chat message', (msg) => {
     console.log(`message: ${msg}`);
     InputOutput.emit('message', msg)
@@ -46,18 +46,10 @@ InputOutput.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
-    
-  }
-  );
+
+}
+);
 })
-
-
-// InputOutput.on('connection', (socket) => {
-//   socket.emit('server message', { server: 'any messages for me?' });
-//   socket.on('chat message', (msg) => {
-//     console.log('message: ' + msg);
-//   });
-// });
 
 
 InputOutput.on('connection', (socket) => {
@@ -66,19 +58,7 @@ InputOutput.on('connection', (socket) => {
   });
 });
 
-// InputOutput.on('connection', (socket) => {
-//   console.log('loading.............');
-//   // socket.emit('server message', { server: 'any messages for me?'});
-//   socket.on('chat message', (msg) => {
-//     InputOutput.emit(`message: ${msg}`);
-//   });
-// });
 
-// InputOutput.on('connection', (socket) => {
-//   let context = { server: 'any messages for me?' }
-//   socket.emit('server message', context);
-// });
-
-server.listen(3000, () => {
+server.listen(8000, () => {
   console.log('listening on *:3000');
 });

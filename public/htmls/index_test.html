@@ -196,7 +196,7 @@
           href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
     </footer>
   </div>
-   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script> -->
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -204,12 +204,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
     crossorigin="anonymous"></script>
-    <!-- <%- include('../public/javascripts/greetings.js') %>  -->
+  <!-- <%- include('../public/javascripts/greetings.js') %>  -->
 
-    <script src="../javascripts/greetings.js"></script>
+  <script src="../javascripts/greetings.js"></script>
 
   <script src="/socket.io/socket.io.js"></script>
-<script>
+  <!-- <script>
     const socket = io();
 
    socket.on('server message', (data) => {
@@ -239,42 +239,62 @@
       input.value = '';
     }
   });
-</script>¨
+</script>
 
-<!--
 <script>
-  // initialize socket connection
-  var socket = io();
+    var socket = io();
 
-  // log server message data to the console
-  socket.on('server message', (data) => {
-    console.log(data);
-  });
+    socket.on('server message', (data) => {
+      console.log(data);
+    })
 
-  // get form and input elements
-  var form = document.getElementById('form');
-  var input = document.getElementById('input');
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
 
-  // handle form submission
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (input.value) {
-      // emit chat message event with input value as data
-      socket.emit('chat message', input.value);
-      // clear input field
-      input.value = '';
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit('chat message', input.value);
+        input.value = '';
+      }
+    });
+    socket.on('chat message', function(msg) {
+      var item = document.createElement('li');
+      item.textContent = msg;
+      messages.appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+ -->
+  <script>
+
+    var socket = io();
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+    var messages = document.getElementById('messages');
+
+    function handleServerMessage(data) {
+      console.log(data);
     }
-  });
 
-  // handle chat message event and append to message list
-  socket.on('chat message', function(msg) {
-    var item = document.createElement('li');
-    item.textContent = msg;
-    messages.appendChild(item);
-    window.scrollTo(0, document.body.scrollHeight);
-  });
-</script> 
--->
+    function handleChatMessage(msg) {
+      var item = document.createElement('li');
+      item.textContent = msg;
+      messages.appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      if (input.value) {
+        socket.emit('chat message', input.value);
+        input.value = '';
+      }
+    }
+
+    socket.on('server message', handleServerMessage);
+    socket.on('chat message', handleChatMessage);
+    form.addEventListener('submit', handleFormSubmit);
+  </script>
 </body>
 
 </html>
