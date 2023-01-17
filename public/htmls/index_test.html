@@ -138,8 +138,8 @@
 
 <!-- style="background-image: url('./public/images/why-programming-is-important.jpg'); -->
 
-<body class="d-flex h-100 text-center text-bg-dark">
-  <!-- style="background-image: url(./public/images/pexels-jill-wellington-39853.jpg);"> -->
+<body class="d-flex h-100 text-center text-bg-dark"
+  style="background-image: url(../images/pexels-jill-wellington-39853.jpg);">
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
@@ -164,28 +164,22 @@
         <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
       </p>
 
-      <ul id="messages"></ul>
+      <!-- <ul id="messages"></ul>
       <form id="form" action="">
         <input id="input" autocomplete="off" /><button>Send</button>
-      </form>
-
-      <!-- <div class="input-group mb-3">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
-        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-      </div> -->
-      <!-- <div class="row" style="color:rgb(255, 255, 255)">
+      </form> -->
+      <div class="row" style="color:rgb(255, 255, 255)">
         <ul style="color: #fff;" id="messages"></ul>
       </div>
       <form action="" id="form">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Recipient's username" id="inputInfo" autocomplete="off"
+          <input type="text" class="form-control" placeholder="Recipient's username" id="input" autocomplete="off"
             aria-label="Recipient's username" aria-describedby="button-addon2">
-           <button class="btn " type="submit" id="button-addon2">Button</button> 
+          <!-- <button class="btn " type="submit" id="button-addon2">Button</button> -->
           <button type="submit" class="btn btn-primary"> SEND </button>
 
         </div>
-      </form> -->
-
+      </form>
 
 
 
@@ -266,8 +260,32 @@
     });
  -->
   <script>
+    // Connect to the Socket.IO server
+    const socket = io();
 
-    var socket = io();
+    // Emit a "connection" event on connection
+    socket.on("connect", () => {
+      socket.emit("connection", { message: "User connected" });
+    });
+
+    // Emit a "disconnection" event on disconnection
+    socket.on("disconnect", () => {
+      socket.emit("disconnection", { message: "User disconnected" });
+    });
+
+
+    // Listen for 'server message' events from the server
+    socket.on('server message', (data) => {
+      //console.log('%c' + data.message, 'color: green');
+      console.log('%c Received message: ' + data.message, 'color: green; font-size: 15px;');
+
+    });
+
+    //Listen for 'chat message' events from the server
+    socket.on('chat message', (message) => {
+      console.log('%c' + `Received message | Events from the server |: ${message} `, 'color : purple');
+    });
+
     var form = document.getElementById('form');
     var input = document.getElementById('input');
     var messages = document.getElementById('messages');
@@ -283,6 +301,7 @@
       window.scrollTo(0, document.body.scrollHeight);
     }
 
+
     function handleFormSubmit(event) {
       event.preventDefault();
       if (input.value) {
@@ -294,6 +313,7 @@
     socket.on('server message', handleServerMessage);
     socket.on('chat message', handleChatMessage);
     form.addEventListener('submit', handleFormSubmit);
+/*--------------------------------------------------------------------------------------------------------------------------------*/
   </script>
 </body>
 
